@@ -1,4 +1,4 @@
-# simple demo of redux for iOS
+# Simple demo of Redux for iOS
 
 This app demonstrates how the app stae is managed.
 
