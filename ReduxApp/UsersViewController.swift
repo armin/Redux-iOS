@@ -22,7 +22,7 @@ class UsersViewController: UIViewController {
 
 	@IBAction func facebookPressed(sender: AnyObject) {
 		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-		appDelegate?.store?.dispatch(appDelegate?.store?.state, action: ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
+		appDelegate?.store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
 	}
 
 }

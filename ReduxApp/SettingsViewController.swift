@@ -42,12 +42,12 @@ class SettingsViewController: UIViewController, Updatable {
 
 	@IBAction func filterSwitchPressed(sender: AnyObject) {
 		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-		appDelegate?.store?.dispatch(appDelegate?.store?.state, action: ToggleSettingsAction(type : "TOGGLE_FILTER"))
+		appDelegate?.store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FILTER"))
 	}
 
 	@IBAction func facebookSwtichPressed(sender: AnyObject) {
 		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-		appDelegate?.store?.dispatch(appDelegate?.store?.state, action: ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
+		appDelegate?.store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
 	}
 
 }

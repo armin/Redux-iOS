@@ -57,8 +57,8 @@ struct Store : Reducable
 		self.subscribers = []
 	}
 	
-	mutating func dispatch(state : State?, action: ActionType) {
-		self.state = self.reducer(state: state, action: action)
+	mutating func dispatch(action: ActionType) {
+		self.state = self.reducer(state: self.state, action: action)
 		print("Current State:\n \(self.state)")
 		if let state = self.state {
 			self.subscribers.forEach { $0.update(state) }
