@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8CCFC4391C1C462A00E64F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC4381C1C462A00E64F56 /* AppDelegate.swift */; };
-		8CCFC43B1C1C462A00E64F56 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC43A1C1C462A00E64F56 /* FirstViewController.swift */; };
-		8CCFC43D1C1C462A00E64F56 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC43C1C1C462A00E64F56 /* SecondViewController.swift */; };
+		8CCFC43B1C1C462A00E64F56 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC43A1C1C462A00E64F56 /* UsersViewController.swift */; };
+		8CCFC43D1C1C462A00E64F56 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC43C1C1C462A00E64F56 /* SettingsViewController.swift */; };
 		8CCFC4401C1C462A00E64F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCFC43E1C1C462A00E64F56 /* Main.storyboard */; };
 		8CCFC4421C1C462A00E64F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCFC4411C1C462A00E64F56 /* Assets.xcassets */; };
 		8CCFC4451C1C462A00E64F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCFC4431C1C462A00E64F56 /* LaunchScreen.storyboard */; };
 		8CCFC4501C1C462A00E64F56 /* ReduxAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC44F1C1C462A00E64F56 /* ReduxAppTests.swift */; };
 		8CCFC45B1C1C462A00E64F56 /* ReduxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC45A1C1C462A00E64F56 /* ReduxAppUITests.swift */; };
+		8CCFC4691C1C465E00E64F56 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC4681C1C465E00E64F56 /* Redux.swift */; };
+		8CCFC46B1C1C4B7F00E64F56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC46A1C1C4B7F00E64F56 /* User.swift */; };
+		8CCFC46D1C1C4C0900E64F56 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCFC46C1C1C4C0900E64F56 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +40,8 @@
 /* Begin PBXFileReference section */
 		8CCFC4351C1C462A00E64F56 /* ReduxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCFC4381C1C462A00E64F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CCFC43A1C1C462A00E64F56 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8CCFC43C1C1C462A00E64F56 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8CCFC43A1C1C462A00E64F56 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		8CCFC43C1C1C462A00E64F56 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8CCFC43F1C1C462A00E64F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CCFC4411C1C462A00E64F56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCFC4441C1C462A00E64F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		8CCFC4561C1C462A00E64F56 /* ReduxAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCFC45A1C1C462A00E64F56 /* ReduxAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxAppUITests.swift; sourceTree = "<group>"; };
 		8CCFC45C1C1C462A00E64F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCFC4681C1C465E00E64F56 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
+		8CCFC46A1C1C4B7F00E64F56 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8CCFC46C1C1C4C0900E64F56 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				8CCFC4381C1C462A00E64F56 /* AppDelegate.swift */,
-				8CCFC43A1C1C462A00E64F56 /* FirstViewController.swift */,
-				8CCFC43C1C1C462A00E64F56 /* SecondViewController.swift */,
+				8CCFC43A1C1C462A00E64F56 /* UsersViewController.swift */,
+				8CCFC43C1C1C462A00E64F56 /* SettingsViewController.swift */,
 				8CCFC43E1C1C462A00E64F56 /* Main.storyboard */,
 				8CCFC4411C1C462A00E64F56 /* Assets.xcassets */,
 				8CCFC4431C1C462A00E64F56 /* LaunchScreen.storyboard */,
 				8CCFC4461C1C462A00E64F56 /* Info.plist */,
+				8CCFC4681C1C465E00E64F56 /* Redux.swift */,
+				8CCFC46A1C1C4B7F00E64F56 /* User.swift */,
+				8CCFC46C1C1C4C0900E64F56 /* Settings.swift */,
 			);
 			path = ReduxApp;
 			sourceTree = "<group>";
@@ -259,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CCFC43D1C1C462A00E64F56 /* SecondViewController.swift in Sources */,
+				8CCFC46D1C1C4C0900E64F56 /* Settings.swift in Sources */,
+				8CCFC43D1C1C462A00E64F56 /* SettingsViewController.swift in Sources */,
 				8CCFC4391C1C462A00E64F56 /* AppDelegate.swift in Sources */,
-				8CCFC43B1C1C462A00E64F56 /* FirstViewController.swift in Sources */,
+				8CCFC4691C1C465E00E64F56 /* Redux.swift in Sources */,
+				8CCFC46B1C1C4B7F00E64F56 /* User.swift in Sources */,
+				8CCFC43B1C1C462A00E64F56 /* UsersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

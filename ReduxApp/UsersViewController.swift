@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  ReduxApp
 //
 //  Created by Armin Kroll on 12/12/2015.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class UsersViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,6 +20,10 @@ class SecondViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+	@IBAction func facebookPressed(sender: AnyObject) {
+		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+		appDelegate?.store?.dispatch(appDelegate?.store?.state, action: ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
+	}
 
 }
 
