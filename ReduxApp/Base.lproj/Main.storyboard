@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruo-FV-DHW">
-                                <rect key="frame" x="268" y="260" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruo-FV-DHW">
+                                <rect key="frame" x="268" y="285" width="64" height="30"/>
                                 <animations/>
                                 <state key="normal" title="facebook"/>
                                 <connections>
@@ -29,6 +29,10 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ruo-FV-DHW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="FBp-zG-sPM"/>
+                            <constraint firstItem="Ruo-FV-DHW" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="zwN-3t-VIT"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                 </viewController>
