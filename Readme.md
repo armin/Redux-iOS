@@ -1,13 +1,13 @@
 # Simple demo of Redux for iOS
 
-This app demonstrates how the app stae is managed.
+This app demonstrates how Redux concepts can be used in an iOS app
 
-The state can be be changed form anywhere and will update the any UI that subscribed to reflect the current app state.
 
 ## One app state
 
 There is only one state for the whole app.
 App state is kept in the Store. 
+The state can be be changed form anywhere and will update the any UI that subscribed to reflect the current app state.
 Action are used to transfer the app state to a new state. 
 Listeners get updated whenever the app state changes. 
 Reducers are used for state transfer. Reducers are can be composed. 
