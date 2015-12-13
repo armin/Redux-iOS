@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+
 class SettingsViewController: UIViewController, Updatable {
 	
 	@IBOutlet weak var filterSwitch: UISwitch!
@@ -17,9 +20,8 @@ class SettingsViewController: UIViewController, Updatable {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-		appDelegate?.store?.subscribe(self)
-		self.update((appDelegate?.store?.state)!)
+		storeKeeper().store?.subscribe(self)
+		self.update((storeKeeper().store?.state)!)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -41,13 +43,11 @@ class SettingsViewController: UIViewController, Updatable {
 
 
 	@IBAction func filterSwitchPressed(sender: AnyObject) {
-		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-		appDelegate?.store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FILTER"))
+		storeKeeper().store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FILTER"))
 	}
 
 	@IBAction func facebookSwtichPressed(sender: AnyObject) {
-		let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-		appDelegate?.store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
+		storeKeeper().store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
 	}
 
 }

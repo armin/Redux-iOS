@@ -8,6 +8,11 @@
 
 import Foundation
 
+// MARK - Usually implemented by the app delegate
+protocol Reduxable {
+	var store : Store? { get set }
+}
+
 // MARK - State
 
 typealias State = Dictionary<String , Any>

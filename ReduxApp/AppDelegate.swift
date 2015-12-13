@@ -8,9 +8,13 @@
 
 import UIKit
 
-@UIApplicationMain
+func storeKeeper() -> AppDelegate {
+	let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+	return delegate!
+}
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, Reduxable {
 
 	var window: UIWindow?
 	var store : Store?
