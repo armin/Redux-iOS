@@ -8,33 +8,34 @@
 
 import UIKit
 
+// shorthand to get to the store
 func storeKeeper() -> AppDelegate {
 	let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
 	return delegate!
 }
+
+// the app reducer calls other reducers and assembles the app state.
+func appReducer(state: State?, action: ActionType) -> State? {
+	if let state = state {
+		return [
+			"users" : userReducer(state["users"] as? [User], action: action),
+			"settings" : settingsReducer(state["settings"] as? Dictionary<String,Bool>, action: action)
+		]
+	}
+	
+	// defaults
+	return [
+		"users" : userReducer(nil, action: action),
+		"settings" : settingsReducer(nil, action: action)
+	]
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, Reduxable {
 
 	var window: UIWindow?
 	var store : Store?
-
-	// the app reducer calls other reducers and assembles the app state.
-	func appReducer(state: State?, action: ActionType) -> State? {
-		if let state = state {
-			return [
-				"users" : userReducer(state["users"] as? [User], action: action),
-				"settings" : settingsReducer(state["settings"] as? Dictionary<String,Bool>, action: action)
-			]
-		}
-		
-		// defaults
-		return [
-			"users" : userReducer(nil, action: action),
-			"settings" : settingsReducer(nil, action: action)
-		]
-	}
-	
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.

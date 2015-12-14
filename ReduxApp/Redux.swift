@@ -8,16 +8,16 @@
 
 import Foundation
 
-// MARK - Usually implemented by the app delegate
+// MARK: Usually implemented by the app delegate
 protocol Reduxable {
 	var store : Store? { get set }
 }
 
-// MARK - State
+// MARK: State
 
 typealias State = Dictionary<String , Any>
 
-// MARK - Actions
+// MARK: Actions
 
 protocol ActionType {
 	var type : String { get }
@@ -32,15 +32,27 @@ struct InitialAction : ActionType {
 	}
 }
 
-// MARK - Listeners are updatable
+// MARK: Updatable
+
+// Listeners are updatable and have an identity so they can be compared
 protocol Updatable
 {
 	func update(state : State)
+	var identifier : String { get set }
 }
 
-// MARK - Store
+func generateIdentifier() -> String {
+	 return NSUUID().UUIDString
+}
 
-// Sothing that wants to transfered a state into anothers state
+func !=(lhs: Updatable, rhs: Updatable) -> Bool {
+	return  lhs.identifier != rhs.identifier
+}
+
+
+// MARK: Store
+
+// Something that wants to transfer a state into another state
 protocol Reducable
 {
 	var reducer : (state : State? , action : ActionType) -> State? { get }
@@ -52,7 +64,7 @@ struct Store : Reducable
 {
 	var state : State?
 	var reducer : (state : State? , action : ActionType) -> State?
-	private var subscribers : Array<Updatable>
+	var subscribers : Array<Updatable>
 
 	init(reducer: (State?, ActionType) -> State?)
 	{
@@ -72,5 +84,9 @@ struct Store : Reducable
 
 	mutating func subscribe(listener: Updatable) {
 		self.subscribers.append(listener)
+	}
+	
+	mutating func unsubscribe(listener: Updatable ) {
+		self.subscribers = self.subscribers.filter({ $0 != listener })
 	}
 }

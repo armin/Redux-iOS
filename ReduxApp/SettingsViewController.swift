@@ -1,4 +1,4 @@
-//
+	//
 //  SecondViewController.swift
 //  ReduxApp
 //
@@ -16,7 +16,14 @@ class SettingsViewController: UIViewController, Updatable {
 	@IBOutlet weak var filterSwitch: UISwitch!
 	
 	@IBOutlet weak var facebookSwitch: UISwitch!
-	
+	// generate an identifier as part of being an Updatable
+	var identifier = generateIdentifier()
+
+	deinit {
+		// remove self form Redux store subscribers
+		storeKeeper().store?.unsubscribe(self)
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -40,7 +47,6 @@ class SettingsViewController: UIViewController, Updatable {
 			}
 		}
 	}
-
 
 	@IBAction func filterSwitchPressed(sender: AnyObject) {
 		storeKeeper().store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FILTER"))
