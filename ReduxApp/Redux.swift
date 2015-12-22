@@ -41,10 +41,12 @@ protocol Updatable
 	var identifier : String { get set }
 }
 
+// helper that can be use in implementations of Updatable to mage it unique and identifieable
 func generateIdentifier() -> String {
 	 return NSUUID().UUIDString
 }
 
+// Equatable for Updatables. This will allow us to filter Updatables (basically subscribers)
 func !=(lhs: Updatable, rhs: Updatable) -> Bool {
 	return  lhs.identifier != rhs.identifier
 }
