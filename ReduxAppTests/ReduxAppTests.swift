@@ -21,12 +21,7 @@ class ReduxAppTests: XCTestCase {
 	
 	var store : Store?
 	
-	func appReducer(state: State?, action: ActionType) -> State? {
-		if let state = state {
-			return [:]
-		}
-		
-		// defaults
+	func appReducer(_: State?, action: ActionType) -> State? {
 		return [:]
 	}
 
