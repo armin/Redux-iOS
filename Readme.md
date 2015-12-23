@@ -5,16 +5,16 @@ This app demonstrates how Redux concepts can be used in an iOS app
 
 ## One app state
 
-There is only one state for the whole app.
-App state is kept in the Store. 
-The state can be be changed form anywhere and will update the any UI that subscribed to reflect the current app state.
-Action are used to transfer the app state to a new state. 
+There big difference to any other app architecture is that Redux has only one state for the whole app.
+The app state is kept in the Store. 
+The state can be be changed form anywhere and will update any UI that subscribed to reflect the new app state.
+Action are used to trigger the transfer of the app state to a new state. 
 Listeners get updated whenever the app state changes. 
-Reducers are used for state transfer. Reducers are can be composed. 
+Another intersting concept are the Reducers which are used for state transfer. Reducers can be composed. An single app reducer is configured in the Store which may then call other reducers to transfer parts of the app state. This is a great way to decompose state tranistion and keep code organised. 
 
 ## Unidirectional data flow
 
-Data flows from in one direction. When the UI changes it sends an action to the store via a dispatch method.
+Data flows one in one direction. When the UI changes it sends an Action to the Store via a Dispatch method.
 The app state gets transferred into a new state by calling the app reducer which then calles various reducers and composes the new app state.
 After a state change all listeneres get notified. A view controller would for example subscribe to state changes and it's update method gets called which in turn updates the whole UI (or View Model if MVVM is used)
 
