@@ -1,4 +1,4 @@
-# Simple demo of Redux for iOS
+# Redux for iOS
 
 This app demonstrates how Redux concepts can be used in an iOS app
 
@@ -30,10 +30,10 @@ After a state change all listeneres get notified. A view controller would for ex
 
 And the cycle repeats.
 
-##Sample 
+##Sample iOS App
 
-The sample app has a settings view controller. The user can toggle facebook on that screen which will call a toggle action.
-To demonstrate the power of Redux another screen has a button which calls the same dispatch action to toggle facebook. When we to the the settings screen the switch is already correct and updated - nice.
+The sample app demonstrates how Redux is used and what problem it elegantly solve. The sample app has a settings view controller that shows two settings which can be toggled on or off. The user can toggle facebook on that screen which will create a **toggle action**.
+To demonstrate the power of Redux another screen has a plain old button which creates the same action to toggle facebook. No matter wich screen changes the setting the other screen will be updated - nice.
 
 #Redux References
 - [Getting started with Redux by Dan Abramov](https://egghead.io/series/getting-started-with-redux)
