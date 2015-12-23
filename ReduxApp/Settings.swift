@@ -8,18 +8,27 @@
 
 import Foundation
 
+// 2 actions: one to toggle a filer on/off and one to toggle facebook on/off
+enum SettingsActionKey : String {
+	case ToggleFilter = "TOGGLE_FILTER"
+	case ToggleFacebook = "TOGGLE_FACEBOOK"
+}
+
+// The action to toggle any setting
 struct ToggleSettingsAction : ActionType {
 	var type : String
 	var data : Any { get {return ""} }
 }
 
+// the key for the settings in the settings dictionary
+// We use this to construct the new settings state
 enum SettingKey : String {
 	case Filter = "filter"
 	case Facebook = "facebook"
 }
 
 
-// settings is a dictionary of
+// settings is a dictionary of string,Bool 
 func settingsReducer(settings: Dictionary<String,Bool>?, action: ActionType) -> Dictionary<String,Bool>
 {
 	guard let settings = settings else {
@@ -32,10 +41,10 @@ func settingsReducer(settings: Dictionary<String,Bool>?, action: ActionType) -> 
 	// find the item wih the key and toggle it
 	var toggleKey = "undefined"
 	switch action.type {
-	case "TOGGLE_FILTER" :
+	case SettingsActionKey.ToggleFilter.rawValue :
 		toggleKey = SettingKey.Filter.rawValue
 		break
-	case "TOGGLE_FACEBOOK" :
+	case SettingsActionKey.ToggleFacebook.rawValue :
 		toggleKey = SettingKey.Facebook.rawValue
 		break
 	default : break

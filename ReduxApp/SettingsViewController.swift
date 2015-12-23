@@ -36,21 +36,21 @@ class SettingsViewController: UIViewController, Subscriber {
 	func update(state: State) {
 		print("Updating switches")
 		if let settings = state["settings"] as? Dictionary<String,Bool> {
-			if let filter = settings["filter"] {
+			if let filter = settings[SettingKey.Filter.rawValue] {
 				self.filterSwitch.on = filter
 			}
-			if let facebook = settings["facebook"] {
+			if let facebook = settings[SettingKey.Facebook.rawValue] {
 				self.facebookSwitch.on = facebook
 			}
 		}
 	}
 
 	@IBAction func filterSwitchPressed(sender: AnyObject) {
-		storeKeeper().store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FILTER"))
+		storeKeeper().store?.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFilter.rawValue))
 	}
 
 	@IBAction func facebookSwtichPressed(sender: AnyObject) {
-		storeKeeper().store?.dispatch(ToggleSettingsAction(type : "TOGGLE_FACEBOOK"))
+		storeKeeper().store?.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
 	}
 
 }
