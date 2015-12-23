@@ -35,3 +35,6 @@ And the cycle repeats.
 The sample app has a settings view controller. The user can toggle facebook on that screen which will call a toggle action.
 To demonstrate the power of Redux another screen has a button which calls the same dispatch action to toggle facebook. When we to the the settings screen the switch is already correct and updated - nice.
 
+#Redux References
+- [Getting started with Redux by Dan Abramov](https://egghead.io/series/getting-started-with-redux)
+- [Redux ](http://rackt.org/redux/index.html)
