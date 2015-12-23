@@ -8,10 +8,7 @@
 
 import UIKit
 
-
-
-
-class SettingsViewController: UIViewController, Updatable {
+class SettingsViewController: UIViewController, Subscriber {
 	
 	@IBOutlet weak var filterSwitch: UISwitch!
 	

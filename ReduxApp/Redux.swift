@@ -32,22 +32,22 @@ struct InitialAction : ActionType {
 	}
 }
 
-// MARK: Updatable
+// MARK: Subscriber
 
 // Listeners are updatable and have an identity so they can be compared
-protocol Updatable
+protocol Subscriber
 {
 	func update(state : State)
 	var identifier : String { get set }
 }
 
-// helper that can be use in implementations of Updatable to mage it unique and identifieable
+// helper that can be use in implementations of Updatable to make it unique and identifieable so it can be filtered.
 func generateIdentifier() -> String {
 	 return NSUUID().UUIDString
 }
 
 // Equatable for Updatables. This will allow us to filter Updatables (basically subscribers)
-func !=(lhs: Updatable, rhs: Updatable) -> Bool {
+func !=(lhs: Subscriber, rhs: Subscriber) -> Bool {
 	return  lhs.identifier != rhs.identifier
 }
 
@@ -66,7 +66,7 @@ struct Store : Reducable
 {
 	var state : State?
 	var reducer : (state : State? , action : ActionType) -> State?
-	var subscribers : Array<Updatable>
+	var subscribers : Array<Subscriber>
 
 	init(reducer: (State?, ActionType) -> State?)
 	{
@@ -84,11 +84,11 @@ struct Store : Reducable
 		}
 	}
 
-	mutating func subscribe(listener: Updatable) {
+	mutating func subscribe(listener: Subscriber) {
 		self.subscribers.append(listener)
 	}
 	
-	mutating func unsubscribe(listener: Updatable ) {
+	mutating func unsubscribe(listener: Subscriber ) {
 		self.subscribers = self.subscribers.filter({ $0 != listener })
 	}
 }
