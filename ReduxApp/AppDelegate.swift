@@ -8,11 +8,7 @@
 
 import UIKit
 
-// shorthand to get to the store
-func storeKeeper() -> AppDelegate {
-	let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
-	return delegate!
-}
+var appStore = Store(reducer: appReducer)
 
 // the app reducer calls other reducers and assembles the app state.
 func appReducer(state: State?, action: ActionType) -> State? {

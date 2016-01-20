@@ -9,7 +9,7 @@
 import XCTest
 @testable import ReduxApp
 
-class Subscriber : Updatable {
+class TestSubscriber : Subscriber {
 	var identifier = generateIdentifier()
 	func update(state: State) {
 		return
@@ -38,7 +38,7 @@ class ReduxAppTests: XCTestCase {
 	
 	func testSubscribe() {
 		XCTAssert(self.store?.subscribers.count == 0)
-		let subscriber = Subscriber()
+		let subscriber = TestSubscriber()
 		self.store?.subscribe(subscriber)
 		XCTAssert(self.store?.subscribers.count == 1)
 		self.store?.unsubscribe(subscriber)

@@ -18,14 +18,14 @@ class SettingsViewController: UIViewController, Subscriber {
 
 	deinit {
 		// remove self form Redux store subscribers
-		storeKeeper().store?.unsubscribe(self)
+		appStore.unsubscribe(self)
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		storeKeeper().store?.subscribe(self)
-		self.update((storeKeeper().store?.state)!)
+		appStore.subscribe(self)
+		self.update((appStore.state)!)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -46,11 +46,11 @@ class SettingsViewController: UIViewController, Subscriber {
 	}
 
 	@IBAction func filterSwitchPressed(sender: AnyObject) {
-		storeKeeper().store?.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFilter.rawValue))
+		appStore.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFilter.rawValue))
 	}
 
 	@IBAction func facebookSwtichPressed(sender: AnyObject) {
-		storeKeeper().store?.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
+		appStore.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
 	}
 
 }

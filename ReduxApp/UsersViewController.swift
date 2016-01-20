@@ -21,7 +21,7 @@ class UsersViewController: UIViewController {
 	}
 
 	@IBAction func facebookPressed(sender: AnyObject) {
-		storeKeeper().store?.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
+		appStore.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
 	}
 
 }
