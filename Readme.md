@@ -15,7 +15,6 @@ The power of Redux is in the Reducers which are used to transfer app state. Redu
 
 ## Unidirectional data flow
 
-![Redux flow in iOS](https://raw.githubusercontent.com/armin/Redux-iOS/master/doc/flow.gif)
 
 Data flows only in one direction. When the UI changes it sends an Action to the Store via a Dispatch method.
 The app state gets transferred into a new state by calling the app reducer which then calles various reducers and composes the new app state.
@@ -32,6 +31,8 @@ After a state change all listeneres get notified. A view controller would for ex
 7. View controllers may create a new Action to reflect any user interaction and calls dispatch on the Store. Other objects may also creata action e.g. a data sources may create an action. Data received on a web socket could also trigger the creation of an Action to reflect changes. 
 
 And the cycle repeats.
+
+![Redux flow in iOS](https://raw.githubusercontent.com/armin/Redux-iOS/master/doc/flow.gif)
 
 ##Sample iOS App
 
