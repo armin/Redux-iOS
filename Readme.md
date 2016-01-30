@@ -8,9 +8,10 @@ This app demonstrates how Redux concepts can be used in an iOS app
 There big difference to any other app architecture is that Redux has only one state for the whole app.
 The app state is kept in the Store. 
 The state can be be changed form anywhere and will update any UI that subscribed to reflect the new app state.
+
 Action are used to trigger the transfer of the app state to a new state. 
 Listeners get updated whenever the app state changes. 
-Another intersting concept are the Reducers which are used for state transfer. Reducers can be composed. An single app reducer is configured in the Store which may then call other reducers to transfer parts of the app state. This is a great way to decompose state tranistion and keep code organised. 
+The power of Redux is in the Reducers which are used to transfer app state. Reducers can be composed. An single app reducer is configured in the Store which may then call other reducers to transfer parts of the app state. This is a great way to decompose state tranistion and keep code organised. 
 
 ## Unidirectional data flow
 
@@ -33,7 +34,7 @@ And the cycle repeats.
 ##Sample iOS App
 
 The sample app demonstrates how Redux is used and what problem it elegantly solve. The sample app has a settings view controller that shows two settings which can be toggled on or off. The user can toggle facebook on that screen which will create a **toggle action**.
-To demonstrate the power of Redux another screen has a plain old button which creates the same action to toggle facebook. No matter wich screen changes the setting the other screen will be updated - nice.
+To demonstrate the power of Redux another screen has a plain old button which creates the same action to toggle facebook. No matter which screen changes the setting the other screen will be updated - nice.
 
 #Redux References
 - [Getting started with Redux by Dan Abramov](https://egghead.io/series/getting-started-with-redux)
