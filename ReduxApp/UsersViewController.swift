@@ -20,7 +20,7 @@ class UsersViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	@IBAction func facebookPressed(sender: AnyObject) {
+	@IBAction func facebookPressed(_ sender: AnyObject) {
 		appStore.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
 	}
 

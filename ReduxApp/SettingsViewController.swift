@@ -33,23 +33,23 @@ class SettingsViewController: UIViewController, Subscriber {
 		// Dispose of any resources that can be recreated.
 	}
 
-	func update(state: State) {
+	func update(_ state: State) {
 		print("Updating switches")
 		if let settings = state["settings"] as? Dictionary<String,Bool> {
 			if let filter = settings[SettingKey.Filter.rawValue] {
-				self.filterSwitch.on = filter
+				self.filterSwitch.isOn = filter
 			}
 			if let facebook = settings[SettingKey.Facebook.rawValue] {
-				self.facebookSwitch.on = facebook
+				self.facebookSwitch.isOn = facebook
 			}
 		}
 	}
 
-	@IBAction func filterSwitchPressed(sender: AnyObject) {
+	@IBAction func filterSwitchPressed(_ sender: AnyObject) {
 		appStore.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFilter.rawValue))
 	}
 
-	@IBAction func facebookSwtichPressed(sender: AnyObject) {
+	@IBAction func facebookSwtichPressed(_ sender: AnyObject) {
 		appStore.dispatch(ToggleSettingsAction(type : SettingsActionKey.ToggleFacebook.rawValue))
 	}
 
