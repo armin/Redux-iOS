@@ -22,7 +22,7 @@ struct AddUserAction : ActionType {
 }
 
 // this deals only with the user part of the state not the total app state
-func userReducer(users: [User]?, action: ActionType) -> [User] {
+func userReducer(_ users: [User]?, action: ActionType) -> [User] {
 	guard let users = users else {
 		return []
 	}

@@ -37,13 +37,13 @@ struct InitialAction : ActionType {
 // Listeners are updatable and have an identity so they can be compared
 protocol Subscriber
 {
-	func update(state : State)
+	func update(_ state : State)
 	var identifier : String { get set }
 }
 
 // helper that can be use in implementations of Updatable to make it unique and identifieable so it can be filtered.
 func generateIdentifier() -> String {
-	 return NSUUID().UUIDString
+	 return UUID().uuidString
 }
 
 // Equatable for Updatables. This will allow us to filter Updatables (basically subscribers)
@@ -57,7 +57,7 @@ func !=(lhs: Subscriber, rhs: Subscriber) -> Bool {
 // Something that wants to transfer a state into another state
 protocol Reducable
 {
-	var reducer : (state : State? , action : ActionType) -> State? { get }
+	var reducer : (_ state : State? , _ action : ActionType) -> State? { get }
 }
 
 // Simple Redux Store implementation
@@ -65,10 +65,10 @@ protocol Reducable
 struct Store : Reducable
 {
 	var state : State?
-	var reducer : (state : State? , action : ActionType) -> State?
+	var reducer : (_ state : State? , _ action : ActionType) -> State?
 	var subscribers : Array<Subscriber>
 
-	init(reducer: (State?, ActionType) -> State?)
+	init(reducer: @escaping (State?, ActionType) -> State?)
 	{
 		self.reducer = reducer
 		print("call initial")
@@ -76,19 +76,19 @@ struct Store : Reducable
 		self.subscribers = []
 	}
 	
-	mutating func dispatch(action: ActionType) {
-		self.state = self.reducer(state: self.state, action: action)
+	mutating func dispatch(_ action: ActionType) {
+		self.state = self.reducer(self.state, action)
 		print("Current State:\n \(self.state)")
 		if let state = self.state {
 			self.subscribers.forEach { $0.update(state) }
 		}
 	}
 
-	mutating func subscribe(listener: Subscriber) {
+	mutating func subscribe(_ listener: Subscriber) {
 		self.subscribers.append(listener)
 	}
 	
-	mutating func unsubscribe(listener: Subscriber ) {
+	mutating func unsubscribe(_ listener: Subscriber ) {
 		self.subscribers = self.subscribers.filter({ $0 != listener })
 	}
 }

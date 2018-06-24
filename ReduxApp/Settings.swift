@@ -29,7 +29,7 @@ enum SettingKey : String {
 
 
 // settings is a dictionary of string,Bool 
-func settingsReducer(settings: Dictionary<String,Bool>?, action: ActionType) -> Dictionary<String,Bool>
+func settingsReducer(_ settings: Dictionary<String,Bool>?, action: ActionType) -> Dictionary<String,Bool>
 {
 	guard let settings = settings else {
 		// defaults

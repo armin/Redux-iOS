@@ -11,7 +11,7 @@ import XCTest
 
 class TestSubscriber : Subscriber {
 	var identifier = generateIdentifier()
-	func update(state: State) {
+	func update(_ state: State) {
 		return
 	}
 }
@@ -47,7 +47,7 @@ class ReduxAppTests: XCTestCase {
 	
 	func testPerformanceExample() {
 		// This is an example of a performance test case.
-		self.measureBlock {
+		self.measure {
 			// Put the code you want to measure the time of here.
 		}
 	}
