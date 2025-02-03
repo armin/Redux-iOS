@@ -9,7 +9,7 @@ The big difference to any other app architecture is that Redux has only one stat
 The app state is kept in the Store. 
 The state can be be changed form anywhere and will update any UI that subscribed to reflect the new app state.
 
-Action are used to trigger the transfer of the app state to a new state. 
+Actions are used to trigger the transfer of the app state to a new state. 
 Listeners get updated whenever the app state changes. 
 The power of Redux is in the Reducers which are used to transfer app state. Reducers can be composed. An single app reducer is configured in the Store which may then call other reducers to transfer parts of the app state. This is a great way to decompose state tranistion and keep code organised. 
 
