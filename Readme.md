@@ -5,7 +5,7 @@ This app demonstrates how Redux concepts can be used in an iOS app
 
 ## One app state
 
-There big difference to any other app architecture is that Redux has only one state for the whole app.
+The big difference to any other app architecture is that Redux has only one state for the whole app.
 The app state is kept in the Store. 
 The state can be be changed form anywhere and will update any UI that subscribed to reflect the new app state.
 
