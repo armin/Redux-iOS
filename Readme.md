@@ -11,7 +11,7 @@ The state can be be changed form anywhere and will update any UI that subscribed
 
 Actions are used to trigger the transfer of the app state to a new state. 
 Listeners get updated whenever the app state changes. 
-The power of Redux is in the Reducers which are used to transfer app state. Reducers can be composed. An single app reducer is configured in the Store which may then call other reducers to transfer parts of the app state. This is a great way to decompose state tranistion and keep code organised. 
+The power of Redux is in the Reducers which are used to transfer app state. Reducers can be composed. A single app reducer is configured in the Store which may then call other reducers to transfer parts of the app state. This is a great way to decompose state tranistion and keep code organised. 
 
 ## Unidirectional data flow
 
