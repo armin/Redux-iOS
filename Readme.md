@@ -17,7 +17,7 @@ The power of Redux is in the Reducers which are used to transfer app state. Redu
 
 
 Data flows only in one direction. When the UI changes it sends an Action to the Store via a Dispatch method.
-The app state gets transferred into a new state by calling the app reducer which then calles various reducers and composes the new app state.
+The app state gets transferred into a new state by calling the app reducer which then calls various reducers and composes the new app state.
 After a state change all listeneres get notified. A view controller would for example subscribe to state changes and it's update method gets called which in turn updates the whole UI (or View Model if MVVM is used)
 
 ![Redux flow in iOS](https://raw.githubusercontent.com/armin/Redux-iOS/master/doc/Redux-iOS%20flow.png)
